@@ -2,14 +2,6 @@
 
 ## Documentation
 
-## Quick start
-
-- BaleroCMS: http://localhost:8080
-- Dashboard: http://localhost:8080/login
-
-That's all — if you open http://localhost:8080 you will see the Balero CMS Setup Wizard!
-
----
 
 ## Install
 
@@ -37,6 +29,13 @@ docker-compose up -d --build
 ```bash
 docker-compose up -d
 ```
+
+## Quick start
+
+- BaleroCMS: http://localhost:8080
+- Dashboard: http://localhost:8080/login
+
+That's all — if you open http://localhost:8080 you will see the Balero CMS Setup Wizard!
 
 
 
