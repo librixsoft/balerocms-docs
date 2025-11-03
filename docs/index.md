@@ -1,3 +1,7 @@
+# BaleroCMS Documentation
+
+## Documentation
+
 ## Quick start
 
 - BaleroCMS: http://localhost:8080

@@ -7,7 +7,6 @@ Create tests in `Tests/Framework` and run:
 docker compose exec phpunit composer install
 
 docker compose exec phpunit composer test
-
 ```
 
 ## Generate code coverage with Docker + PHPUnit
@@ -31,4 +30,5 @@ docker run --rm \
 ```
 
 ---
+
 

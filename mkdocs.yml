@@ -1,0 +1,64 @@
+site_name: BaleroCMS Documentation
+site_url: https://librixsoft.github.io/balerocms-docs/
+site_description: Official BaleroCMS Documentation
+repo_name: librixsoft/balerocms-docs
+repo_url: https://github.com/librixsoft/balerocms-docs
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.expand
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - Installation & Setup:
+    - Accessing Services: Accessing-services.md
+    - MySQL Storage Modes: MySQL-storage-modes.md
+    - Production Mode: Production-mode.md
+  - Development:
+    - Update Front-End Libs: Update-Install-Front-End-Libs.md
+    - Third-Party Libraries: Using-Third-Party-Libraries.md
+    - Local Debug: Debug-Local.md
+    - Run without Docker: Run-without-Docker.md
+    - Testing: Testing.md
+  - Docker:
+    - Stop Docker Services: Stopping-Docker-Services.md
+    - Debug Container: Debug-Container.md
+    - Docker Hub Repository: Docker-Hub-Repository.md
+  - Tools:
+    - SonarQube: SonarQube.md
+    - Repository: Repository.md
+    - Cache: Cache.md
+    - Notes: Notes.md
+
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - toc:
+      permalink: true
+
+plugins:
+  - search

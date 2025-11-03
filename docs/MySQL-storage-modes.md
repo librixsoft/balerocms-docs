@@ -11,3 +11,5 @@ You can configure MySQL in two ways:
    - Recommended for production use.
 
 In `docker-compose.yml` you can switch between these two options by commenting/uncommenting the relevant section.
+
+
