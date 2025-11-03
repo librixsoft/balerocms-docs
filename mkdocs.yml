@@ -28,10 +28,9 @@ theme:
     - search.suggest
     - search.highlight
     - content.code.copy
-
-extra:
-  version:
-    provider: mike
+    - content.action.edit
+    - content.action.view
+    - version  # 👈 habilita el selector de versiones en la UI
 
 nav:
   - Home: index.md
@@ -66,4 +65,12 @@ markdown_extensions:
 
 plugins:
   - search
-  - mike
+  - mike:
+      alias_type: symlink
+      redirect_template: null
+      deploy_prefix: ''
+      canonical_version: latest
+
+extra:
+  version:
+    provider: mike 
