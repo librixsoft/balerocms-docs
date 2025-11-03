@@ -1,67 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://librixsoft.github.io/balerocms-docs/1.0/</loc>
+         <loc>https://librixsoft.github.io/balerocms-docs/latest/</loc>
          <lastmod>2025-11-03</lastmod>
     </url>
     <url>
-         <loc>https://librixsoft.github.io/balerocms-docs/1.0/Accessing-services/</loc>
+         <loc>https://librixsoft.github.io/balerocms-docs/latest/Accessing-services/</loc>
          <lastmod>2025-11-03</lastmod>
     </url>
     <url>
-         <loc>https://librixsoft.github.io/balerocms-docs/1.0/Cache/</loc>
+         <loc>https://librixsoft.github.io/balerocms-docs/latest/Cache/</loc>
          <lastmod>2025-11-03</lastmod>
     </url>
     <url>
-         <loc>https://librixsoft.github.io/balerocms-docs/1.0/Debug-Container/</loc>
+         <loc>https://librixsoft.github.io/balerocms-docs/latest/Debug-Container/</loc>
          <lastmod>2025-11-03</lastmod>
     </url>
     <url>
-         <loc>https://librixsoft.github.io/balerocms-docs/1.0/Debug-Local/</loc>
+         <loc>https://librixsoft.github.io/balerocms-docs/latest/Debug-Local/</loc>
          <lastmod>2025-11-03</lastmod>
     </url>
     <url>
-         <loc>https://librixsoft.github.io/balerocms-docs/1.0/Docker-Hub-Repository/</loc>
+         <loc>https://librixsoft.github.io/balerocms-docs/latest/Docker-Hub-Repository/</loc>
          <lastmod>2025-11-03</lastmod>
     </url>
     <url>
-         <loc>https://librixsoft.github.io/balerocms-docs/1.0/MySQL-storage-modes/</loc>
+         <loc>https://librixsoft.github.io/balerocms-docs/latest/MySQL-storage-modes/</loc>
          <lastmod>2025-11-03</lastmod>
     </url>
     <url>
-         <loc>https://librixsoft.github.io/balerocms-docs/1.0/Notes/</loc>
+         <loc>https://librixsoft.github.io/balerocms-docs/latest/Notes/</loc>
          <lastmod>2025-11-03</lastmod>
     </url>
     <url>
-         <loc>https://librixsoft.github.io/balerocms-docs/1.0/Production-mode/</loc>
+         <loc>https://librixsoft.github.io/balerocms-docs/latest/Production-mode/</loc>
          <lastmod>2025-11-03</lastmod>
     </url>
     <url>
-         <loc>https://librixsoft.github.io/balerocms-docs/1.0/Repository/</loc>
+         <loc>https://librixsoft.github.io/balerocms-docs/latest/Repository/</loc>
          <lastmod>2025-11-03</lastmod>
     </url>
     <url>
-         <loc>https://librixsoft.github.io/balerocms-docs/1.0/Run-without-Docker/</loc>
+         <loc>https://librixsoft.github.io/balerocms-docs/latest/Run-without-Docker/</loc>
          <lastmod>2025-11-03</lastmod>
     </url>
     <url>
-         <loc>https://librixsoft.github.io/balerocms-docs/1.0/SonarQube/</loc>
+         <loc>https://librixsoft.github.io/balerocms-docs/latest/SonarQube/</loc>
          <lastmod>2025-11-03</lastmod>
     </url>
     <url>
-         <loc>https://librixsoft.github.io/balerocms-docs/1.0/Stopping-Docker-Services/</loc>
+         <loc>https://librixsoft.github.io/balerocms-docs/latest/Stopping-Docker-Services/</loc>
          <lastmod>2025-11-03</lastmod>
     </url>
     <url>
-         <loc>https://librixsoft.github.io/balerocms-docs/1.0/Testing/</loc>
+         <loc>https://librixsoft.github.io/balerocms-docs/latest/Testing/</loc>
          <lastmod>2025-11-03</lastmod>
     </url>
     <url>
-         <loc>https://librixsoft.github.io/balerocms-docs/1.0/Update-Install-Front-End-Libs/</loc>
+         <loc>https://librixsoft.github.io/balerocms-docs/latest/Update-Install-Front-End-Libs/</loc>
          <lastmod>2025-11-03</lastmod>
     </url>
     <url>
-         <loc>https://librixsoft.github.io/balerocms-docs/1.0/Using-Third-Party-Libraries/</loc>
+         <loc>https://librixsoft.github.io/balerocms-docs/latest/Using-Third-Party-Libraries/</loc>
          <lastmod>2025-11-03</lastmod>
     </url>
 </urlset>
