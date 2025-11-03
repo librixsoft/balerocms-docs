@@ -29,6 +29,10 @@ theme:
     - search.highlight
     - content.code.copy
 
+extra:
+  version:
+    provider: mike
+
 nav:
   - Home: index.md
   - Installation & Setup:
@@ -62,3 +66,4 @@ markdown_extensions:
 
 plugins:
   - search
+  - mike
