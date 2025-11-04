@@ -1,0 +1,18 @@
+/* Color primario personalizado */
+[data-md-color-scheme="default"] {
+    --md-primary-fg-color: #172f56;
+    --md-primary-fg-color--light: #2a5298;
+    --md-primary-fg-color--dark: #0f1f3a;
+  }
+  
+  /* Para modo oscuro (opcional) */
+  [data-md-color-scheme="slate"] {
+    --md-primary-fg-color: #172f56;
+    --md-primary-fg-color--light: #2a5298;
+    --md-primary-fg-color--dark: #0f1f3a;
+  }
+  
+  /* Color de acento (links, botones, etc) */
+  :root {
+    --md-accent-fg-color: #2a5298;
+  }
