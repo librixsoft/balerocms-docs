@@ -31,7 +31,8 @@ theme:
     - content.action.edit
     - content.action.view
     - version  # 👈 habilita el selector de versiones en la UI
-
+extra_css:
+  - stylesheets/extra.css
 nav:
   - Home: index.md
   - Installation & Setup:
