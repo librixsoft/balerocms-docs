@@ -1,8 +1,5 @@
 # BaleroCMS Documentation
 
-## Documentation
-
-
 ## Install
 
 Set write permissions to config file:

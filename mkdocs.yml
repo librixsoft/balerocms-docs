@@ -34,26 +34,11 @@ theme:
 extra_css:
   - stylesheets/extra.css
 nav:
-  - Home: index.md
-  - Installation & Setup:
-    - Accessing Services: Accessing-services.md
-    - MySQL Storage Modes: MySQL-storage-modes.md
-    - Production Mode: Production-mode.md
-  - Development:
-    - Update Front-End Libs: Update-Install-Front-End-Libs.md
-    - Third-Party Libraries: Using-Third-Party-Libraries.md
-    - Local Debug: Debug-Local.md
-    - Run without Docker: Run-without-Docker.md
-    - Testing: Testing.md
-  - Docker:
-    - Stop Docker Services: Stopping-Docker-Services.md
-    - Debug Container: Debug-Container.md
-    - Docker Hub Repository: Docker-Hub-Repository.md
-  - Tools:
-    - SonarQube: SonarQube.md
-    - Repository: Repository.md
-    - Cache: Cache.md
-    - Notes: Notes.md
+  - Getting Started: index.md
+  - Services: Services.md
+  - Developers Guide: Development.md
+  - Docker: Docker.md
+  - Tools & Reference: Tools-Reference.md
 
 markdown_extensions:
   - pymdownx.highlight
