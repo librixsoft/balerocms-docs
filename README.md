@@ -127,3 +127,11 @@ mike deploy 1.0 --push
 http://127.0.0.1:8000/1.0/
 
 With this workflow, you don’t need to reinstall anything, and MkDocs will always recognize the Material theme.
+
+# Set default documentation version
+
+mike set-default 1.0
+
+Push changes
+
+git push origin gh-pages
