@@ -7,131 +7,93 @@ This repository contains the MkDocs site for BaleroCMS docs.
 - Python 3.8+
 - pip
 
-## Install dependencies
+## Setup
 
-pip install mkdocs mkdocs-material
+### 1. Create a virtual environment (recommended)
 
-## Run locally (preview)
+```bash
+python3 -m venv .venv
+```
 
+### 2. Activate the virtual environment
+
+```bash
+source .venv/bin/activate
+```
+
+### 3. Install dependencies
+
+```bash
+pip install mkdocs mkdocs-material mike
+```
+
+## Development
+
+### Run locally (preview without versions)
+
+```bash
 mkdocs serve
+```
 
-Then open:
+Then open: http://127.0.0.1:8000
 
-http://127.0.0.1:8000
+### Preview with versions (using Mike)
 
-## Build the static site
+```bash
+mike serve
+```
 
+Then open: http://127.0.0.1:8000
+
+## Build
+
+### Build the static site
+
+```bash
 mkdocs build --clean
+```
 
 This generates the static output under `site/`.
 
-## Deploy to GitHub Pages (manual)
+## Deployment
 
-The site is configured for GitHub Pages (see `site_url` in `mkdocs.yml`).
+### Using Mike (recommended for versioned docs)
 
-mkdocs gh-deploy --clean --force
+Mike handles both building and deploying to GitHub Pages:
 
-- --clean: remove obsolete files from gh-pages.
-- --force: force push even if the branch exists locally.
-
-Make sure you have push permissions and that Pages is set to serve from the gh-pages branch in the repository settings.
-
-## Project structure
-
-- docs/ — Markdown content
-- mkdocs.yml — MkDocs configuration (theme, navigation, extensions)
-- site/ — Build output (ignored by git)
-
-## Versioning with Mike
-
-Enable versioned docs using Mike (works with Material for MkDocs).
-
-### 1) Install Mike
-
-pip install mike
-
-# If using pipx:
-# pipx install mike
-
-### 2) Configure Material version selector
-
-In mkdocs.yml:
-
-extra:
-  version:
-    provider: mike
-
-### 3) Prepare GitHub Pages
-
-- Ensure GitHub Pages serves from the gh-pages branch.
-- The first Mike deployment will create/update this branch.
-
-### 4) Create the first version and set default
-
-# Deploy version 1.0 and label it as "latest"
-mike deploy 1.0 latest -u
-
-# Make "latest" the default version on the site
-mike set-default latest -u
-
-### 5) Add a new version later
-
-After updating docs:
-
-# Publish as 1.1 and move the "latest" alias
-mike deploy 1.1 latest -u
-
-### 6) Preview locally with versions
-
-mike serve
-
-### 7) Useful commands
-
-# List published versions
-mike list
-
-# Retitle a version
-mike retitle 1.0 "1.0 (Initial Release)"
-
-# Delete a version and push the change
-mike delete 1.0 -p
-
-Notes:
-- mike manages content on the gh-pages branch; typically you don’t use mkdocs gh-deploy when using Mike.
-- Keep site/ ignored; Mike builds and pushes the output for you.
-
-## Recommended workflow (stable, avoids pipx issues)
-
-To update version 1.0 reliably:
-
-1. Create a **virtual environment** (only once):
-
-python3 -m venv .venv
-
-2. Activate it whenever you open a new terminal:
-
-source .venv/bin/activate
-
-3. Install all required packages (only once):
-
-pip install mkdocs mkdocs-material mike
-
-4. Update your docs in `docs/` as needed.
-
-5. Deploy the updated version 1.0:
-
-mike deploy 1.0 --push
-
-6. Optional: verify in browser:
-
-http://127.0.0.1:8000/1.0/
-
-With this workflow, you don’t need to reinstall anything, and MkDocs will always recognize the Material theme.
-
-# Set default documentation version
-
-mike set-default 1.0
-
-Push changes
-
+```bash
+# Example: Deploy version 1.0 with "latest" alias
+mike deploy 1.0 latest --update-aliases --allow-empty
 git push origin gh-pages
+```
+
+### Create and deploy a new version
+
+When you're ready to publish a new version (e.g., 1.1):
+
+```bash
+# Deploy version 1.1 and move the "latest" alias to it
+mike deploy 1.1 latest --update-aliases --allow-empty
+
+# Push to GitHub Pages
+git push origin gh-pages
+
+# Optional: Set as default version (landing page)
+mike set-default 1.1
+git push origin gh-pages
+```
+
+After deployment, users will see a version selector in the documentation with both 1.0 and 1.1 available, and 1.1 will be marked as "latest".
+
+### Manual deployment (without versions)
+
+If not using Mike:
+
+```bash
+mkdocs gh-deploy --clean --force
+```
+
+- `--clean`: remove obsolete files from gh-pages
+- `--force`: force push even if the branch exists locally
+
+**Note:** When using Mike, don't use `mkdocs gh-deploy` as Mike manages the `gh-pages` branch.
