@@ -59,4 +59,7 @@ plugins:
 
 extra:
   version:
-    provider: mike 
+    provider: mike
+  generator: false
+
+copyright: Copyright © BaleroCMS by LibrixSoft. All rights reserved.
