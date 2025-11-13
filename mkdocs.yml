@@ -38,6 +38,7 @@ nav:
   - Services: Services.md
   - Developers Guide: Development.md
   - Docker: Docker.md
+  - Testing: Testing.md
   - Tools & Reference: Tools-Reference.md
 
 markdown_extensions:
