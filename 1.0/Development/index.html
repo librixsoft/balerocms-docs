@@ -307,6 +307,25 @@
   
   
     <li class="md-tabs__item">
+      <a href="../Testing/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Testing
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../Tools-Reference/" class="md-tabs__link">
         
   
@@ -630,6 +649,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../Testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Testing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Tools-Reference/" class="md-nav__link">
         
   
@@ -902,26 +943,6 @@ php<span class="w"> </span>-S<span class="w"> </span>localhost:8080
 <div class="highlight"><pre><span></span><code>http://localhost:8080
 </code></pre></div></p>
 <p><strong>Note:</strong> You can manually generate the route cache by executing <code>php bin/cache_routes.php</code> or execute directly using Docker for this!</p>
-<h2 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h2>
-<h3 id="run-unit-tests">Run Unit Tests<a class="headerlink" href="#run-unit-tests" title="Permanent link">&para;</a></h3>
-<p>Create tests in <code>Tests/Framework</code> and run:</p>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>phpunit<span class="w"> </span>composer<span class="w"> </span>install
-
-docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>phpunit<span class="w"> </span>composer<span class="w"> </span><span class="nb">test</span>
-</code></pre></div>
-<h3 id="generate-code-coverage-with-docker-phpunit">Generate Code Coverage with Docker + PHPUnit<a class="headerlink" href="#generate-code-coverage-with-docker-phpunit" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>phpunit<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>php<span class="w"> </span>-d<span class="w"> </span>xdebug.mode<span class="o">=</span>coverage<span class="w"> </span>./vendor/bin/phpunit<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--configuration<span class="w"> </span>phpunit.xml
-</code></pre></div>
-<p>It will create: build/clover.xml</p>
-<h3 id="execute-sonar-to-view-coverage">Execute Sonar to View Coverage<a class="headerlink" href="#execute-sonar-to-view-coverage" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-e<span class="w"> </span><span class="nv">SONAR_HOST_URL</span><span class="o">=</span><span class="s2">&quot;http://host.docker.internal:9000&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-e<span class="w"> </span><span class="nv">SONAR_TOKEN</span><span class="o">=</span><span class="s2">&quot;GENERATED_TOKEN&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-v<span class="w"> </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>:/usr/src<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>sonarsource/sonar-scanner-cli
-</code></pre></div>
 
 
 
