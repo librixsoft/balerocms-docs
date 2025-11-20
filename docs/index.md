@@ -1,5 +1,12 @@
 # BaleroCMS Documentation
 
+## Clone the repository
+
+```bash
+git clone git@github.com:librixsoft/balerocms.git
+cd balerocms
+```
+
 ## Install
 
 Set write permissions to config file:
