@@ -35,6 +35,7 @@ extra_css:
   - stylesheets/extra.css
 nav:
   - Getting Started: index.md
+  - Download: Download.md
   - Services: Services.md
   - Developers Guide: Development.md
   - Docker: Docker.md
