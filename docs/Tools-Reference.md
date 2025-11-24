@@ -30,15 +30,6 @@ docker run --rm \
 - GitHub: https://github.com/librixsoft/balerocms-docker
 - Bitbucket mirror: https://balerocms@bitbucket.org/librixsoft/balerocms.git
 
-## Cache Folder
-
-The "/cache/" folder stores **auto-generated cache files** used by the application to improve routing performance.
-
-### Notes
-
-- Cached files are **automatically generated** when the application starts.
-- Do **not edit manually**. If missing, the app will scan the `App/Controllers` directory dynamically.
-
 ## Additional Notes
 
 - phpMyAdmin: http://localhost:8081 (User: `root`, Password: `root`)

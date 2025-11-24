@@ -41,5 +41,17 @@ docker-compose up -d
 
 That's all — if you open http://localhost:8080 you will see the Balero CMS Setup Wizard!
 
+## Auto-generated resources
+
+When you start the application for the first time, it will generate some resources automatically:
+
+### Cache Folder
+
+The "/cache/" folder stores **auto-generated cache files** used by the application to improve routing performance.
+
+Auto-generated DTOs and routes are cached in this folder.
+
+
+
 
 
