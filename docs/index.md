@@ -7,7 +7,7 @@ git clone git@github.com:librixsoft/balerocms.git
 cd balerocms
 ```
 
-## Install
+## Config file
 
 Set write permissions to config file:
 
