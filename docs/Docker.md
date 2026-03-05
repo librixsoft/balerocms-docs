@@ -5,8 +5,10 @@
 ### Start
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
+
+> `phpunit` must use `Dockerfile.phpunit` (Xdebug-enabled image) for coverage runs.
 
 ### Stop only containers (keep volumes and networks)
 
