@@ -705,8 +705,11 @@
 <h1 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h1>
 <h2 id="docker-services">Docker Services<a class="headerlink" href="#docker-services" title="Permanent link">&para;</a></h2>
 <h3 id="start">Start<a class="headerlink" href="#start" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>up<span class="w"> </span>-d
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
 </code></pre></div>
+<blockquote>
+<p><code>phpunit</code> must use <code>Dockerfile.phpunit</code> (Xdebug-enabled image) for coverage runs.</p>
+</blockquote>
 <h3 id="stop-only-containers-keep-volumes-and-networks">Stop only containers (keep volumes and networks)<a class="headerlink" href="#stop-only-containers-keep-volumes-and-networks" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>stop
 </code></pre></div>

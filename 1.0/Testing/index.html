@@ -587,6 +587,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#coverage-prerequisite-xdebug" class="md-nav__link">
+    <span class="md-ellipsis">
+      Coverage prerequisite (Xdebug)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#generate-code-coverage-with-docker-phpunit" class="md-nav__link">
     <span class="md-ellipsis">
       Generate Code Coverage with Docker + PHPUnit
@@ -676,23 +685,44 @@
 <h2 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h2>
 <h3 id="run-unit-tests">Run Unit Tests<a class="headerlink" href="#run-unit-tests" title="Permanent link">&para;</a></h3>
 <p>Create tests in <code>Tests/Framework</code> and run:</p>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>phpunit<span class="w"> </span>composer<span class="w"> </span>install
-
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w"> </span>phpunit
+docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>phpunit<span class="w"> </span>composer<span class="w"> </span>install
 docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>phpunit<span class="w"> </span>composer<span class="w"> </span><span class="nb">test</span>
 </code></pre></div>
+<p>If <code>phpunit</code> is not running, verify with:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>ps
+</code></pre></div>
+<h3 id="coverage-prerequisite-xdebug">Coverage prerequisite (Xdebug)<a class="headerlink" href="#coverage-prerequisite-xdebug" title="Permanent link">&para;</a></h3>
+<p>The <code>phpunit</code> service must be built with <code>Dockerfile.phpunit</code> (it installs/enables Xdebug).</p>
+<p>If coverage is not detected, rebuild the service:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>down
+docker<span class="w"> </span>compose<span class="w"> </span>build<span class="w"> </span>--no-cache<span class="w"> </span>phpunit
+docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w"> </span>phpunit
+docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>phpunit<span class="w"> </span>php<span class="w"> </span>-m<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>xdebug
+</code></pre></div>
 <h3 id="generate-code-coverage-with-docker-phpunit">Generate Code Coverage with Docker + PHPUnit<a class="headerlink" href="#generate-code-coverage-with-docker-phpunit" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>phpunit<span class="w"> </span>composer<span class="w"> </span><span class="nb">test</span>
+</code></pre></div>
+<p>Or explicitly with PHP args:</p>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>phpunit<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>php<span class="w"> </span>-d<span class="w"> </span>xdebug.mode<span class="o">=</span>coverage<span class="w"> </span>./vendor/bin/phpunit<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--configuration<span class="w"> </span>phpunit.xml
 </code></pre></div>
-<p>It will create: build/clover.xml</p>
+<p>It will create: <code>build/clover.xml</code></p>
 <h3 id="execute-sonar-to-view-coverage">Execute Sonar to View Coverage<a class="headerlink" href="#execute-sonar-to-view-coverage" title="Permanent link">&para;</a></h3>
+<p>First, ensure SonarQube is running:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w"> </span>db<span class="w"> </span>sonarqube
+docker<span class="w"> </span>compose<span class="w"> </span>logs<span class="w"> </span>-f<span class="w"> </span>sonarqube
+</code></pre></div>
+<p>Wait until SonarQube is operational at <code>http://localhost:9000</code>.</p>
+<p>Then run scanner:</p>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>-e<span class="w"> </span><span class="nv">SONAR_HOST_URL</span><span class="o">=</span><span class="s2">&quot;http://host.docker.internal:9000&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-e<span class="w"> </span><span class="nv">SONAR_TOKEN</span><span class="o">=</span><span class="s2">&quot;GENERATED_TOKEN&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-v<span class="w"> </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>:/usr/src<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-e<span class="w"> </span><span class="nv">SONAR_TOKEN</span><span class="o">=</span><span class="s2">&quot;GENERATED_USER_TOKEN&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-v<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span>:/usr/src<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>sonarsource/sonar-scanner-cli
 </code></pre></div>
+<p>Use a <strong>User Token</strong> (recommended for project analysis), not a Global token.</p>
 
 
 
