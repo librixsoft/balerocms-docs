@@ -27,7 +27,7 @@ docker run --rm \
 
 ## Repository
 
-- GitHub: https://github.com/librixsoft/balerocms-docker
+- GitHub: https://github.com/librixsoft/balerocms
 - Bitbucket mirror: https://balerocms@bitbucket.org/librixsoft/balerocms.git
 
 ## Additional Notes
